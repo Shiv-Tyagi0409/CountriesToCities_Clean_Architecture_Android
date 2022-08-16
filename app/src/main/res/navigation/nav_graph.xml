@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+
+    <fragment
+        android:id="@+id/ZoneFragment"
+        android:name="com.finance.loan.greenlighttest.presenter.zone.ZoneFragment"
+        android:label="@string/zone_fragment_label"
+        tools:layout="@layout/fragment_zone">
+
+        <action
+            android:id="@+id/action_ZoneFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+        <action
+            android:id="@+id/action_ZoneFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.finance.loan.greenlighttest.presenter.home.MainFragment"
+        android:label="@string/main_fragment_label"
+        tools:layout="@layout/fragment_main">
+
+
+        <action
+            android:id="@+id/action_MainFragment_to_ZoneFragment"
+            app:destination="@id/ZoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.finance.loan.greenlighttest.presenter.area.AreaFragment"
+        android:label="@string/area_fragment_label"
+        tools:layout="@layout/fragment_area" >
+
+        <action
+            android:id="@+id/action_areaFragment_to_ZoneFragment"
+            app:destination="@id/ZoneFragment" />
+        <action
+            android:id="@+id/action_areaFragment_to_regionFragment"
+            app:destination="@id/regionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionFragment"
+        android:name="com.finance.loan.greenlighttest.presenter.region.RegionFragment"
+        android:label="@string/region_fragment_label"
+        tools:layout="@layout/fragment_region" >
+
+        <action
+            android:id="@+id/action_regionFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+
+
+</navigation>
